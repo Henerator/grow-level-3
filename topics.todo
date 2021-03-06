@@ -1,0 +1,55 @@
+Produce high-quiality code and solution:
+  ☐ Can explain what is the code quality and how to measure it
+  ☐ Understands what is test pyramid and has basic knowledge of different testing types
+  ☐ Usage of automation code quality control tools (linters, tests, typescript, sonarqube, ...)
+    ☐ sonarqube
+
+Improve Knowledge of Software Development Methodologies:
+  ☐ Knows best engineering practices, understands their pros and cons
+  ✔ At least basic knowledge of SDLC phases and models and understanding how SDLC is organized on current project @done(21-03-07 12:11)
+  ✔ Scrum @done(21-03-07 12:10)
+  ✔ Kanban @done(21-03-07 12:10)
+  ✔ Waterfall @done(21-03-07 12:10)
+  ✔ Agile @done(21-03-07 12:10)
+  ✔ Lean @done(21-03-07 15:48)
+  ☐ Extreme Programming Practices
+  ☐ Continous Integration, Continous Delivery, Continous Deployment
+
+Estimate some project parts:
+  ✔ T-Shirt Size Estimation @done(21-03-08 10:24)
+  ✔ Experts Estimations @done(21-03-08 11:04)
+  ✔ Estimation by Analogy @done(21-03-08 10:24)
+  ✔ Estimation by Decomposition (Bottom-up) @done(21-03-08 10:24)
+  ☐ Estimation of Presales and Big Projects Parts
+  ✔ Risks Estimation + Bug Fixing Time Planning @done(21-03-08 11:02)
+  ✔ Three-Point Estimates + PERT @done(21-03-08 10:50)
+
+Participate in Architectural decisions:
+  ☐ MVC, MVVM, MV*
+  ☐ Redux and Flux
+  ☐ GOF Patterns (at least 10-12)
+  ☐ KISS, DRY, YAGNI, SOLID
+    ☐ KISS
+    ☐ DRY
+    ☐ YAGNI
+    ☐ SOLID
+  ☐ Dependency Injection
+
+Study performance Analysis:
+  ☐ Angular, React or other Framework Optimization Techniques
+  ☐ JavaScript Performance Optimization Techniques
+  ☐ Memory Leaks (detection tools and prevention)
+  ☐ JavaScript Obfuscation and Minification
+  ☐ Network Optimizations
+  ☐ Repaint Re-flow Understanding
+  ☐ Critical Rendering Path
+
+Study and apply knowledge of:
+  ✔ JavaScript Communication (XMLHttpRequest, WS, SSE, Pooling, ...) @done(21-03-08 11:05)
+    ✔ Web Sockets @done(21-03-08 11:05)
+    ✔ Server Side Events @done(21-03-08 11:05)
+    ✔ Long Pooling @done(21-03-08 11:05)
+
+JS engines:
+  ✔ most popular (v8) @done(21-03-07 15:48)
+  ✔ How it works @done(21-03-07 15:48)
