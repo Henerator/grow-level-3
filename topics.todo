@@ -1,5 +1,5 @@
 Produce high-quiality code and solution:
-  ☐ Can explain what is the code quality and how to measure it
+  ✔ Can explain what is the code quality and how to measure it @done(21-03-08 22:51)
   ☐ Understands what is test pyramid and has basic knowledge of different testing types
   ☐ Usage of automation code quality control tools (linters, tests, typescript, sonarqube, ...)
     ☐ sonarqube
@@ -12,7 +12,7 @@ Improve Knowledge of Software Development Methodologies:
   ✔ Waterfall @done(21-03-07 12:10)
   ✔ Agile @done(21-03-07 12:10)
   ✔ Lean @done(21-03-07 15:48)
-  ☐ Extreme Programming Practices
+  ✔ Extreme Programming Practices @done(21-03-08 22:27)
   ☐ Continous Integration, Continous Delivery, Continous Deployment
 
 Estimate some project parts:
