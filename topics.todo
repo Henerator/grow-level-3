@@ -1,8 +1,8 @@
 Produce high-quiality code and solution:
   ✔ Can explain what is the code quality and how to measure it @done(21-03-08 22:51)
-  ☐ Understands what is test pyramid and has basic knowledge of different testing types
-  ☐ Usage of automation code quality control tools (linters, tests, typescript, sonarqube, ...)
-    ☐ sonarqube
+  ✔ Understands what is test pyramid and has basic knowledge of different testing types @done(21-03-09 21:45)
+  ✔ Usage of automation code quality control tools (linters, tests, typescript, sonarqube, ...) @done(21-03-09 22:01)
+    ✔ sonarqube @done(21-03-09 22:01)
 
 Improve Knowledge of Software Development Methodologies:
   ☐ Knows best engineering practices, understands their pros and cons
