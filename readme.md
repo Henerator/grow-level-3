@@ -1,10 +1,10 @@
 **Table of contents**
 
-[Software Development Methodologies](#software-development-methodologies)  
+[Software Development Methodologies](#software-development-methodologies)
 - [Agile](#agile)
-  - [Scrum](#scrum)  
-  - [Kanban](#kanban)  
-- [Waterfall](#waterfall)  
+  - [Scrum](#scrum)
+  - [Kanban](#kanban)
+- [Waterfall](#waterfall)
 - [RAD model](#rad-model)
 - [Incremental model](#incremental-model)
 - [Iterative model](#iterative-model)
@@ -84,7 +84,7 @@ SDLC (Software Development Life Cycle)
 
 Канбан – это метод, инструмент с набором практик и принципов. Вы можете использовать все практики, часть практик или не использовать их вообще.
 
-Скрам – это фреймворк с жесткими правилами и границами. Вы можете использовать разные инструменты и методологии внутри Скрама, но если вы отказались от чего-то обязательного в Скраме, он уже не может считаться Скрамом. 
+Скрам – это фреймворк с жесткими правилами и границами. Вы можете использовать разные инструменты и методологии внутри Скрама, но если вы отказались от чего-то обязательного в Скраме, он уже не может считаться Скрамом.
 
 - Непрерывный процесс (отсутствуют спринты)
 - Непрерывная поставка (релиз не ожидает окончания спринта)
@@ -340,7 +340,7 @@ cамый простой способ получать новую информа
 ## Metrics
 
 - Defect Metrics - the number of defects and severity of those defects
-- Complexity Metrics - 
+- Complexity Metrics -
   - Cyclomatic complexity - the number of linearly independent paths (if-else)
   - Program length
 
@@ -350,3 +350,17 @@ cамый простой способ получать новую информа
 - Analyze code before code reviews
 - Follow code review best practices
 - Refactor legacy code (when necessary)
+
+# Test pyramid
+
+- GUI (end-to-end)
+- Service (integration)
+- Unit tests
+
+1. Модульные тесты реализовывать быстрее, чем GUI тесты (время на разработку меньше). Модульные тесты отрабатывают быстрее, чем GUI
+1. Модульные тесты дешевле, чем GUI тесты (стремясь к вершине пирамиды, получаем большую уверенность, что все работает как ожидалось)
+1. Тестирование должно быть разносторонним. Модульных должно быть больше, чем GUI
+
+## Integration tests
+
+**Интеграционное тестирование** - программные модули объединяются логически и тестируются как группа. Cосредоточено на интерфейсах и потоке данных между модулями
