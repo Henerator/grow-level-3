@@ -337,6 +337,16 @@ cамый простой способ получать новую информа
 - Has been well-documented
 - It can be tested
 
+## 7 axes
+
+- **Coding standards** - respect coding standards and follow best practices
+- **Potential bugs** - eliminate code violations to prevent vulnerabilities
+- **Documentation and comments** - provide documentation especially for the Public API, the source code
+- **Duplicated code** - isolates and refines duplications, Don't Repeat Yourself
+- **Complexity** - equalizes disproportionate distributed complexity among components; eliminates complexity if possible
+- **Test coverage** - writes unit tests, especially for complex parts of the software
+- **Design and architecture** - minimize dependencies
+
 ## Metrics
 
 - Defect Metrics - the number of defects and severity of those defects
