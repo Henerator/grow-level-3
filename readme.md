@@ -388,3 +388,30 @@ cамый простой способ получать новую информа
 - Комментарии
 - Архитектура и проектирование
 - Сложность
+
+
+# OWASP 10
+
+- **Injection** - occur when untrusted data is sent to an interpreter as part of a command or query
+- **Broken Authentication** - allowing attackers to compromise passwords, keys, or session tokens
+- **Sensitive Data Exposure** - sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser
+- **XML External Entities (XXE)** - Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks
+- **Broken Access Control** - Restrictions on what authenticated users are allowed to do. Access to unauthorized functionality and/or data
+- **Security Misconfiguration** - misconfigured HTTP headers, verbose error messages containing sensitive information
+- **Cross-Site Scripting (XSS)** - application includes untrusted data in a new web page without proper validation or escaping
+- **Insecure Deserialization** - leads to remote code execution
+- **Using Components with Known Vulnerabilities**
+- **Insufficient Logging & Monitoring**
+
+In russian
+
+- Инъекции
+- Недочеты системы аутентификации и хранения сессий
+- Межсайтовый скриптинг – XSS
+- Небезопасные прямые ссылки на объекты - mysite.ru/read_message.jsp?id=123654 (можно перебирать id)
+- Небезопасная конфигурация
+- Незащищенность критичных данных
+- Отсутствие функций контроля доступа
+- Межсайтовая подделка запроса (Cross-Site Request Forgery, CSRF/XSRF)
+- Использование компонентов с известными уязвимостями
+- Непроверенные переадресации и пересылки
