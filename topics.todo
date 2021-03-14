@@ -26,13 +26,13 @@ Estimate some project parts:
 
 Participate in Architectural decisions:
   ✔ MVC, MVVM, MV* @done(21-03-14 19:20)
-  ☐ Redux and Flux
-  ☐ GOF Patterns (at least 10-12)
-  ☐ KISS, DRY, YAGNI, SOLID
+  ✔ Redux and Flux @done(21-03-14 21:24)
+  ☐ SOLID, KISS, DRY, YAGNI
+    ☐ SOLID
     ☐ KISS
     ☐ DRY
     ☐ YAGNI
-    ☐ SOLID
+  ☐ GOF Patterns (at least 10-12)
   ☐ Dependency Injection
 
 Study performance Analysis:

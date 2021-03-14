@@ -60,7 +60,8 @@
   - [Supervising Controller](#supervising-controller)
 - [MVVM](#mvvm)
 
-[Redux and Flux](#redux-and-flux)
+[Flux](#flux)
+- [Redux](#redux)
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -514,6 +515,23 @@ In russian
 
 ![MVVM](https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png)
 
-# Redux and Flux
+# Flux
 
+подход к управлению состоянием. Накладывает определенные ограничения на то, как и когда могут произойти изменения.
 
+*все данные должны передаваться только в одном направлении*
+
+![MVVM](https://miro.medium.com/max/700/1*WNMEPdtK9TlayHJ1wcUZPQ.png)
+
+- Actions
+- Dispatcher - получает действие (action) и перенаправляет его в хранилище (store)
+  - приложение имеет только один dispatcher
+  - каждое действие отправляется в каждый store
+- Stores - структуры, в которых хранится состояние приложения
+
+## Redux
+
+- Не использует Dispatcher: Redux имеет только одно хранилище
+- Reducers - чистые функции, которые принимают текущее состояние (state) и заданное действие (action), и выводят либо не измененное состояние, либо новую копию состояния
+
+![MVVM](https://miro.medium.com/max/700/1*-5TBPgIKsJpWzpt5_5xCYw.png)
