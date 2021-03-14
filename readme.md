@@ -62,6 +62,8 @@
 
 [Flux](#flux)
 - [Redux](#redux)
+
+[SOLID](#solid)
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -535,3 +537,64 @@ In russian
 - Reducers - чистые функции, которые принимают текущее состояние (state) и заданное действие (action), и выводят либо не измененное состояние, либо новую копию состояния
 
 ![MVVM](https://miro.medium.com/max/700/1*-5TBPgIKsJpWzpt5_5xCYw.png)
+
+# SOLID
+
+- **Single Responsibility Principle** (Принцип единственной ответственности).
+- **Open-Closed Principle** (Принцип открытости-закрытости).
+- **Liskov Substitution Principle** (Принцип подстановки Барбары Лисков).
+- **Interface Segregation Principle** (Принцип разделения интерфейса).
+- **Dependency Inversion Principle** (Принцип инверсии зависимостей).
+
+## SRP
+
+у модуля должна быть только одна причина для изменения
+
+## Open-Closed Principle
+
+модули должны быть открыты для расширения, но закрыты для изменения
+
+- заставляет проектировать модули так, чтобы они делали только одну вещь
+- побуждает связывать сущности через абстракции (а не реализацию)
+- обращает внимание проектировщиков на места стыка и взаимодействие сущностей
+- позволяет сократить количество кода, который необходимо менять при изменении бизнес-требований
+- делает внесение изменений безопасным и относительно дешёвым
+
+## Liskov Substitution Principle
+
+классы-наследники могли бы использоваться вместо родительских классов, от которых они образованы, не нарушая работу программы
+
+## Interface Segregation Principle
+
+сущности не должны зависеть от интерфейсов, которые они не используют
+
+## Dependency Inversion Principle
+
+объектом зависимости должна быть абстракция, а не что-то конкретное
+
+- модули верхних уровней не должны зависеть от модулей нижних уровней. Оба типа модулей должны зависеть от абстракций
+- абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций.
+
+Http завивист от конкретной реализации XMLHttpService
+
+```typescript
+class XMLHttpService {}
+
+class Http {
+  constructor(xmlHttpService: XMLHttpService)
+}
+```
+
+Необходимо связать сервисы через абстракцию
+
+```typescript
+interface Connection {
+  request();
+}
+
+class XMLHttpService implements Connection {}
+
+class Http {
+  constructor(connection: Connection)
+}
+```
