@@ -2,18 +2,65 @@
 
 [Software Development Methodologies](#software-development-methodologies)
 - [Agile](#agile)
+  - [Приниципы](#приниципы)
   - [Scrum](#scrum)
   - [Kanban](#kanban)
+  - [Extreme Programming](#extreme-programming)
+  - [Lean](#lean)
 - [Waterfall](#waterfall)
 - [RAD model](#rad-model)
 - [Incremental model](#incremental-model)
+  - [Advantages](#advantages)
+  - [Disadvantages](#disadvantages)
 - [Iterative model](#iterative-model)
 - [Spiral model](#spiral-model)
 - [V-model](#v-model)
 
-[JS Engines](js-engines)
-  - [V8](#v8)
+[JS Engines](#js-engines)
+- [V8](#v8)
+  - [Threads](#threads)
+  - [Hidden class](#hidden-class)
+  - [Inline Caching](#inline-caching)
+  - [Optimize your code](#optimize-your-code)
 
+[Estimation](#estimation)
+- [T-Shirt Size](#t-shirt-size)
+- [Planning Poker](#planning-poker)
+- [Bucket System](#bucket-system)
+- [Dot-voting](#dot-voting)
+- [Estimation by Analogy](#estimation-by-analogy)
+- [Bottom-up Estimating](#bottom-up-estimating)
+- [Up-bottom Estimating](#up-bottom-estimating)
+- [PERT (Program Evaluation Review Technique)](#pert-program-evaluation-review-technique)
+- [Bug Fixing Time Planning](#bug-fixing-time-planning)
+- [Experts Estimations](#experts-estimations)
+
+[Client server communication](#client-server-communication)
+- [Long Pooling](#long-pooling)
+- [Server Side Events](#server-side-events)
+- [Web Sockets](#web-sockets)
+
+[Code quiality](#code-quiality)
+- [7 axes](#7-axes)
+- [Metrics](#metrics)
+- [How to Improve Code Quality](#how-to-improve-code-quality)
+
+[Test pyramid](#test-pyramid)
+- [Integration tests](#integration-tests)
+
+[SonarQube](#sonar-qube)
+
+[OWASP 10](#owasp-10)
+
+[Design pattern](#design-pattern)
+- [MVC](#mvc)
+  - [Passive view](#passive-view)
+- [MVP](#mvp)
+  - [Passive View](#passive-view)
+  - [Supervising Controller](#supervising-controller)
+- [MVVM](#mvvm)
+
+[Redux and Flux](#redux-and-flux)
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -466,3 +513,7 @@ In russian
 - ViewModel - содержит Model, преобразованную к View, а также команды, которыми может пользоваться View, чтобы влиять на Model
 
 ![MVVM](https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png)
+
+# Redux and Flux
+
+
