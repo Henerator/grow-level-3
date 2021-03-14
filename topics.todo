@@ -25,7 +25,7 @@ Estimate some project parts:
   ✔ Three-Point Estimates + PERT @done(21-03-08 10:50)
 
 Participate in Architectural decisions:
-  ☐ MVC, MVVM, MV*
+  ✔ MVC, MVVM, MV* @done(21-03-14 19:20)
   ☐ Redux and Flux
   ☐ GOF Patterns (at least 10-12)
   ☐ KISS, DRY, YAGNI, SOLID
