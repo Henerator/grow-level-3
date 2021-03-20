@@ -32,8 +32,8 @@ Participate in Architectural decisions:
     ✔ KISS @done(21-03-14 23:51)
     ✔ DRY @done(21-03-14 23:55)
     ✔ YAGNI @done(21-03-14 23:57)
+  ✔ Dependency Injection @done(21-03-20 19:23)
   ☐ GOF Patterns (at least 10-12)
-  ☐ Dependency Injection
 
 Study performance Analysis:
   ☐ Angular, React or other Framework Optimization Techniques
