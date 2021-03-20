@@ -75,6 +75,9 @@
 [Dependency Injection](#dependency-injection)
 
 
+
+[Critical Rendering Path](critical-rendering-path)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -788,3 +791,22 @@ class DependencyManager {
 - **TTI** (Time to Interactive) — время до взаимодействия или время, через которое страница готова взаимодействовать с пользователем.
 - **TBT** (Total Blocking Time) — общее время блокировки основного потока. Учитываются все длинные задачи от FCP до TTI, которые выполнялись дольше 50 миллисекунд.
 - **CLS** (Cumulative Layout Shift) — показатель смещения элемента в процентах на странице во время загрузки. Смещение элементов из-за подгрузки рекламных блоков, изображений и шрифтов.
+
+
+# Critical Rendering Path
+
+The set of steps browsers must take to convert HTML, CSS and JavaScript into living, breathing websites
+
+1. Сделать запрос
+1. Получить HTML-документ
+1. Провести парсинг HTML на предмет включенных ресурсов
+1. Построить DOM tree (document object model)
+1. Отправить запросы критических ресурсов. CSS, блокирующий JS (параллельно с предыдущим пунктом)
+1. Получить весь CSS-код
+1. Построить CSSOM tree
+1. Выполнить весь полученный JS-код. Здесь могут вызываться layout, если из js кода происходит форсирование reflow
+1. Перестроить DOM tree (при необходимости)
+1. Построить Render tree
+1. Отрисовать страницу (layout → paint → Composite)
+  - **layout** - determines where and how the elements are positioned on the page
+
