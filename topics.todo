@@ -37,11 +37,11 @@ Participate in Architectural decisions:
 
 Study performance Analysis:
   ✔ Network Optimizations @done(21-03-20 19:53)
-  ☐ JavaScript Performance Optimization Techniques
+  ✔ JavaScript Performance Optimization Techniques @done(21-03-20 22:35)
   ☐ JavaScript Obfuscation and Minification
   ☐ Memory Leaks (detection tools and prevention)
   ☐ Repaint Re-flow Understanding
-  ☐ Critical Rendering Path
+  ✔ Critical Rendering Path @done(21-03-20 21:33)
   ☐ Angular, React or other Framework Optimization Techniques
 
 Study and apply knowledge of:

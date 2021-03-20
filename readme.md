@@ -74,7 +74,9 @@
 
 [Dependency Injection](#dependency-injection)
 
+[Network Optimizations](#network-optimizations)
 
+[JS Performance Optimizations](#js-performance-optimizations)
 
 [Critical Rendering Path](critical-rendering-path)
 
@@ -782,6 +784,7 @@ class DependencyManager {
 - Используейте отложенную загрузки изображений - не отображается, пока не находится в видимой области (loading="lazy")
 - Не масштабируйте изображения - не загружайте изображение большего размера, чем необходимо отобразить
 - Используйте Gzip-сжатие - заголовк Accept-Encoding: gzip
+- HTTP 2.0 Server Push - настройка сервера, которая позволяет вместе с html сразу отправить необходимые css, js и другие ресурсы
 
 ## Metrics
 
@@ -792,6 +795,34 @@ class DependencyManager {
 - **TBT** (Total Blocking Time) — общее время блокировки основного потока. Учитываются все длинные задачи от FCP до TTI, которые выполнялись дольше 50 миллисекунд.
 - **CLS** (Cumulative Layout Shift) — показатель смещения элемента в процентах на странице во время загрузки. Смещение элементов из-за подгрузки рекламных блоков, изображений и шрифтов.
 
+# JS Performance Optimizations
+
+- Удаляйте неиспользуемый код и функционал
+  - uglify
+  - tree shaking
+  - npm prune for modules
+- Кэшируйте
+  - Cache-Control: no-store - не кэшировать
+  - Cache-Control: no-cache - кеш запрашивает сервер на предмет актуальности ресурса
+  - Cache-Control: private - для отдельного пользователя
+  - Cache-Control: public - могут использовать разные пользователи (e.g. в локальной сети)
+- Выходит из циклов без лишних операций
+- Избавляйтесь от повторных вычислений - сохраняйте значения в замыкании
+- Минимизируйте доступ к DOM
+- Минимизируйте исходный код - может уменьшить размер файлов на 60%
+- Используйте throttle и debounce
+- Не используйте delete - operator has performance negative effects for the V8 hidden classes pattern
+- Используйте асинхронный код, чтобы предотвратить блокировку потоков
+- Используйте Code Splitting - вначале отсылаете пользователю только самые необходимые модули
+- Используйте async и defer - по умолчанию браузер ожидает загрузки скрипта перед обработкой страницы
+  - **async** - страница не ждет async-скрипты, контент обрабатывается и отображается
+    - fetched asynchronously
+    - when it’s ready the HTML parsing is paused to execute the script, then it’s resumed.
+
+  - **defer** - загружать скрипт после окончания рендеринга
+    - fetched asynchronously
+    - executed only after the HTML parsing is done
+- Используйте Web Worker-ы для запуска ресурсоемких задач в фоне
 
 # Critical Rendering Path
 
