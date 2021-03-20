@@ -82,6 +82,8 @@
 
 [Repaint, Re-flow, Composition](#repaint-re-flow-composition)
 
+[Memory Leaks](#memory-leaks)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -890,4 +892,31 @@ Reflow срабатывает
 группирует различные элементы по слоям, растрирует эти слои (отрисовывает пиксели)
 и затем объединяет эти слои в готовую страницу в отдельном потоке композитора
 
+# Memory Leaks
 
+## Garbage Collector
+
+Объект считается подлежащим уничтожению сборщиком мусора, если количество ссылок на него равно нулю
+
+### Mark and sweep
+
+Стартуя из глобального бъекта, сборщик мусора находит все доступные объекты и уничтожает недоступные
+
+## Sources
+
+- неиспользуемые объекты в замыкании
+- циклические ссылки
+- глобальные объекты - all global objects by definition never get collected
+  - window
+  - all variables exported by javascript modules
+- подписки
+
+## Detection
+
+- performance tab of dev tools
+- если есть подозрение на утечку конкретных объектов, в них добавляют большие свойства-маркеры (new Array(999999).join('leak'))
+- 3 snapshot technique
+  - F5 to get a clean state. Take a heap snapshot
+  - perform some actions and bring the page roughly back to the same state. Take another heap snapshot
+  - change the page’s state as much as possible. take a third heap snapshot
+- this will show all objects that were created between snapshot 1 and 2 that are still around in snapshot 3
