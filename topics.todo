@@ -36,13 +36,13 @@ Participate in Architectural decisions:
   ☐ GOF Patterns (at least 10-12)
 
 Study performance Analysis:
-  ☐ Angular, React or other Framework Optimization Techniques
+  ✔ Network Optimizations @done(21-03-20 19:53)
   ☐ JavaScript Performance Optimization Techniques
-  ☐ Memory Leaks (detection tools and prevention)
   ☐ JavaScript Obfuscation and Minification
-  ☐ Network Optimizations
+  ☐ Memory Leaks (detection tools and prevention)
   ☐ Repaint Re-flow Understanding
   ☐ Critical Rendering Path
+  ☐ Angular, React or other Framework Optimization Techniques
 
 Study and apply knowledge of:
   ✔ JavaScript Communication (XMLHttpRequest, WS, SSE, Pooling, ...) @done(21-03-08 11:05)
