@@ -78,7 +78,9 @@
 
 [JS Performance Optimizations](#js-performance-optimizations)
 
-[Critical Rendering Path](critical-rendering-path)
+[Critical Rendering Path](#critical-rendering-path)
+
+[Repaint, Re-flow, Composition](#repaint-re-flow-composition)
 
 # Software Development Methodologies
 
@@ -824,6 +826,14 @@ class DependencyManager {
     - executed only after the HTML parsing is done
 - Используйте Web Worker-ы для запуска ресурсоемких задач в фоне
 
+## Obfuscation
+
+приведение исходного кода к виду, сохраняющему её функциональность, но затрудняющему анализ
+
+## Minification
+
+комментарии, переносы строк, пробельные символы удаляются
+
 # Critical Rendering Path
 
 The set of steps browsers must take to convert HTML, CSS and JavaScript into living, breathing websites
@@ -840,4 +850,44 @@ The set of steps browsers must take to convert HTML, CSS and JavaScript into liv
 1. Построить Render tree
 1. Отрисовать страницу (layout → paint → Composite)
   - **layout** - determines where and how the elements are positioned on the page
+
+# Repaint, Re-flow, Composition
+
+1. HTML парсится и разбивается на токены
+1. Токены преобразуются в Ноды
+1. Ноды собираются в DOM (Domain Object Model) дерево
+1. Параллельно с этим процессом происходит парсинг CSS правил и строится CSSOM (CSS Object Model)
+1. CSSOM и DOM объединяются в Render Tree, в котором
+    - скрываются невидимые элементы (meta, script, link и display: none)
+    - добавляются элементы которых нет в DOM (псевдоэлементы :before, :after)
+1. Происходит Reflow, Repaint и Composition
+
+## Layout/Reflow
+
+определяются координаты каждого элемента и пространство которое он занимает
+
+> Определение размеров и местоположений элементов происходит не за один проход по дереву,
+проход может происходить несколько раз, если элементы встречающиеся позже, влияют на предыдущие элементы
+
+при каждом изменении свойства стиля, отвечающего за положение и размеры элемента,
+происходит повторный процесс расчета размеров и положений
+
+Reflow срабатывает
+- при запросе метрики элемента через JS (e.g. getBoundingClientRect())
+- при скроллинге
+- прие запуске на выполнение событий
+
+## Paint/Repaint
+
+создает записи о том как будут отрисованы элементы на странице (позиция x,y, ширина, высота, цвет)
+
+> если вы измените элементу свойство width, произойдет Reflow, а затем и Repaint затронутых элементов
+
+## Composite
+
+конечная отрисовка элементов на странице
+
+группирует различные элементы по слоям, растрирует эти слои (отрисовывает пиксели)
+и затем объединяет эти слои в готовую страницу в отдельном потоке композитора
+
 
