@@ -992,3 +992,70 @@ Send the required HTTP call within the Resolve Guard, which will load the next c
 - уменьшает размер бандла - нет заводских файлов. все декораторы конвертируются в статические функции (@Component превращается в ngComponentDef)
 - ускоряет компиляцию - позволяет пересобирать отдельные директивы (e.g. ngIf) вместо всего компонента
 - упрощает дебаг - отображает источник ошибки, возникшей в темплейте
+
+# React Optimizations
+
+## Memo
+
+memoize/cache functional components
+
+## PureComponent
+
+memoize/cache class components
+
+checks the fields of state and props to know whether the component should be updated
+
+shallowly compares the fields of the previous props and state objects with the fields of the next props and state objects
+
+## UseMemo
+
+memoize value
+
+## UseCallback
+
+memoize function declarations
+
+## Avoid inline function
+
+Since functions are objects in JavaScript, the inline function will always fail the prop diff when React does a diff check
+
+## React Fragment
+
+group a list of children without adding an extra node
+
+## Avoid using Index as Key
+
+When you push or remove an item from the list, if the key is the same as before, React assumes that the DOM element represents the same component
+
+## Avoiding props in initial states
+
+> Using props to initialize a state in constructor function often leads to duplication of "source of truth". This is because constructor function is only invoked when the component is first created.
+
+Don't initialize state with props which can be changed later. Instead, use props directly in the component.
+
+## Avoid spreading props
+
+is unnecessary and a bad practice
+
+```JSX
+<div {...props}></div>
+```
+
+## Using reselect selectors
+
+As Redux practices immutability means new object references will be created every time on action dispatch
+
+Reselect library encapsulates the Redux state and checks the fields of the state and tells React when to render or not if the fields haven’t changed
+
+## Lazy loading
+
+split application to feature modules and load them on-demand
+
+## SSR
+
+Server-side rendering provides performance benefit and consistent SEO performance.
+
+Popular solutions:
+
+- Next.js
+- Gatsby
