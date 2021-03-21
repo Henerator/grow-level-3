@@ -84,6 +84,8 @@
 
 [Memory Leaks](#memory-leaks)
 
+[Angular optimizations](#angular-optimizations)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -920,3 +922,67 @@ Reflow срабатывает
   - perform some actions and bring the page roughly back to the same state. Take another heap snapshot
   - change the page’s state as much as possible. take a third heap snapshot
 - this will show all objects that were created between snapshot 1 and 2 that are still around in snapshot 3
+
+# Angular optimizations
+
+## OnPush change detection strategy
+
+By default Angular detects the changes in the application, within the tree of components. It starts by checking the root component, then its children.
+
+With OnPush the change detection will check if the reference of the object passed to the chid component is changed (inputs are changed by reference)
+
+## RunOutsideAngular
+
+The zone is created by Zone.js which listens on async events and tells them to Angular.
+
+Help to run a code outside the Angular zone without CD
+
+## Pure pipes
+
+A **pure** pipe is only called when Angular detects a change in the value or the parameters passed to a pipe
+
+An **impure** pipe is called for every change detection cycle no matter whether the value or parameter(s) changes
+
+## Trackby
+
+If just one element was added into array Angular will destroy the previous DOM elements and recreates the DOM.
+
+We can add **trackBy** parameter to say Angular to render the newly added item only
+
+## Unsubscribe from Observables
+
+If a subscription is not closed the function callback attached to it will be continuously called, this poses a huge memory leak and performance issue.
+
+## Optimize template expressions
+
+do not use functions in templates: the function will have to finish before other UI codes will be run
+
+## AOT compilation
+
+ - JIT compiles at runtime (выполняется каждый раз при запуске приложения в браузере)
+ - AOT (ahead-of-time) compiles at build (выполняется один раз при сборке приложения)
+
+ AOT produces only the compiled templates, and removes the Angular compiler from the deployment bundle
+ (reduces app payload by around 1MB) and rendering time is increased significantly
+
+ ### Cons
+
+- компиляция шаблонов до сборки (выявление ошибок при сборке)
+- более быстрый запуск приложения
+- скомпилированный файл получается меньше (не нужно включать компилятор в сборку)
+- вопрос безопасности (меньше вероятность внедрения)
+
+## Lazy loading
+
+split application to feature modules and load them on-demand
+
+## Preloading Modules
+
+Once application is loaded we can start loading other modules on the background
+
+- Preload everything (PreloadAllModules)
+- Don’t preload anything (NoPreloading)
+
+## Resolve Guards
+
+Send the required HTTP call within the Resolve Guard, which will load the next component only if the HTTP call returns success

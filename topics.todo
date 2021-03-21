@@ -42,7 +42,8 @@ Study performance Analysis:
   ✔ Memory Leaks (detection tools and prevention) @done(21-03-21 00:04)
   ✔ Repaint Re-flow Understanding @done(21-03-20 23:17)
   ✔ Critical Rendering Path @done(21-03-20 21:33)
-  ☐ Angular, React or other Framework Optimization Techniques
+  ✔ Angular Optimization Techniques @done(21-03-21 20:36)
+  ☐ React Optimization Techniques
 
 Study and apply knowledge of:
   ✔ JavaScript Communication (XMLHttpRequest, WS, SSE, Pooling, ...) @done(21-03-08 11:05)
@@ -53,3 +54,7 @@ Study and apply knowledge of:
 JS engines:
   ✔ most popular (v8) @done(21-03-07 15:48)
   ✔ How it works @done(21-03-07 15:48)
+
+Angualr vs React:
+  ☐ Angular
+  ☐ React
