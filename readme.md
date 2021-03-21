@@ -986,3 +986,9 @@ Once application is loaded we can start loading other modules on the background
 ## Resolve Guards
 
 Send the required HTTP call within the Resolve Guard, which will load the next component only if the HTTP call returns success
+
+# Angular Ivy
+
+- уменьшает размер бандла - нет заводских файлов. все декораторы конвертируются в статические функции (@Component превращается в ngComponentDef)
+- ускоряет компиляцию - позволяет пересобирать отдельные директивы (e.g. ngIf) вместо всего компонента
+- упрощает дебаг - отображает источник ошибки, возникшей в темплейте
