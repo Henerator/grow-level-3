@@ -86,6 +86,14 @@
 
 [Angular optimizations](#angular-optimizations)
 
+[Angular Ivy](#angular-ivy)
+
+[Angular Change Detection](#angular-change-detection)
+
+[React Optimizations](#react-optimizations)
+
+[React Change Detection](#react-change-detection)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -957,6 +965,8 @@ If a subscription is not closed the function callback attached to it will be con
 
 do not use functions in templates: the function will have to finish before other UI codes will be run
 
+you can use Pipes instead
+
 ## AOT compilation
 
  - JIT compiles at runtime (выполняется каждый раз при запуске приложения в браузере)
@@ -965,7 +975,7 @@ do not use functions in templates: the function will have to finish before other
  AOT produces only the compiled templates, and removes the Angular compiler from the deployment bundle
  (reduces app payload by around 1MB) and rendering time is increased significantly
 
- ### Cons
+ ### Pros
 
 - компиляция шаблонов до сборки (выявление ошибок при сборке)
 - более быстрый запуск приложения
@@ -992,6 +1002,19 @@ Send the required HTTP call within the Resolve Guard, which will load the next c
 - уменьшает размер бандла - нет заводских файлов. все декораторы конвертируются в статические функции (@Component превращается в ngComponentDef)
 - ускоряет компиляцию - позволяет пересобирать отдельные директивы (e.g. ngIf) вместо всего компонента
 - упрощает дебаг - отображает источник ошибки, возникшей в темплейте
+
+# Angular Change Detection
+
+- compiler analyzes the template
+- identifies properties of a component that are associated with DOM elements
+- for each association creates a binding in the form of instructions
+- change detection mechanism executes instructions that process bindings
+
+## Change Detection Reason
+
+- we can use the Change Detector service to run change detection manually
+- we can also rely on the framework to trigger change detection automatically
+  - zone.js - patches all asynchronous events in a browser and notify Angular when a certain event occurs
 
 # React Optimizations
 
@@ -1059,3 +1082,17 @@ Popular solutions:
 
 - Next.js
 - Gatsby
+
+# React Change Detection
+
+The core part of the change detection mechanism in React is Virtual DOM comparisons
+
+- create a new Virtual DOM tree from a component
+- comparing it to the previous version of the tree
+- generating a patch to update the relevant parts of the DOM
+- performing updates
+
+## Change Detection Reason
+
+There’s no way to trigger change detection automatically in React. Every change detection cycle starts with the call to the setState function
+
