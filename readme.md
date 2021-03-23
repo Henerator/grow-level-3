@@ -1003,6 +1003,17 @@ Send the required HTTP call within the Resolve Guard, which will load the next c
 - ускоряет компиляцию - позволяет пересобирать отдельные директивы (e.g. ngIf) вместо всего компонента
 - упрощает дебаг - отображает источник ошибки, возникшей в темплейте
 
+## Locality
+
+compiler is only allowed to use information defined by a component decorator and its class
+
+the current implementation requires a global static analysis of the entire application
+and produces artifacts in the form of extra files `metadata.json` and `component.factory.js`
+
+## Tree-Shaking
+
+no longer ship the entire framework code, you only bundle pieces of the framework functionality that you use
+
 # Angular Change Detection
 
 - compiler analyzes the template
