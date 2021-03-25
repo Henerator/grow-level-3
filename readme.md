@@ -94,6 +94,8 @@
 
 [React Change Detection](#react-change-detection)
 
+[Design Patterns](#design-patterns)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -1107,3 +1109,142 @@ The core part of the change detection mechanism in React is Virtual DOM comparis
 
 There’s no way to trigger change detection automatically in React. Every change detection cycle starts with the call to the setState function
 
+# Design Patterns
+
+## Singleton
+
+ensure that a class has only one instance, while providing a global access point to this instance
+
+### Pros
+
+- Гарантирует наличие единственного экземпляра класса
+- Предоставляет к нему глобальную точку доступа
+- Реализует отложенную инициализацию
+
+### Cons
+
+- Нарушает принцип единственной ответственности класса
+
+## Builder
+
+предлагает вынести конструирование объекта за пределы его класса
+
+```typescript
+class Director {
+  construct(builder: Builder) {
+    builder.reset()
+    builder.setSeats(2)
+    builder.setEngine(new SportEngine())
+    builder.setTripComputer(true)
+    builder.setGPS(true)
+  }
+}
+
+class Application {
+  makeCar() {
+    const director = new Director()
+
+    const carBuilder = new CarBuilder()
+    director.constructSportsCar(carBuilder)
+    const car = builder.getResult()
+
+    const manualBuilder = new CarManualBuilder()
+    director.constructSportsCar(manualBuilder)
+  }
+}
+```
+
+### Pros
+
+- Позволяет создавать продукты пошагово
+- Позволяет использовать один и тот же код для создания различных продуктов
+- Изолирует сложный код сборки продукта от его основной бизнес-логики
+
+### Cons
+
+- Усложняет код программы из-за введения дополнительных классов
+- Клиент будет привязан к конкретным классам строителей
+
+## Abstract Factory
+
+...
+
+## Proxy
+
+позволяет подставлять вместо реальных объектов специальные объекты-заменители, перехватываюющие вызовы к оригинальному объекту, позволяя выполнить дополнительные действия до или после передачи вызова оригиналу
+
+> объект-заместитель, обрабоатывающий обращение к базе данных. Ленивая инициализация БД, кэширование запросов
+
+> кредитная карта по отношению к наличным
+
+> логирование обращений к объекту
+
+## Flyweight
+
+позволяет вместить бóльшее количество объектов в отведённую оперативную память, разделяя общее состояние объектов между собой, вместо хранения одинаковых данных в каждом объекте
+
+```typescript
+class TreeFactory {
+  static treeTypes: TreeType[];
+  static getTreeType(name, color, texture) {
+    const type = treeTypes.find(name, color, texture)
+    if (type == null)
+      type = new TreeType(name, color, texture)
+      treeTypes.add(type)
+    return type
+  }
+}
+```
+
+## State
+
+позволяет объектам менять поведение в зависимости от своего состояния
+
+предлагает создать отдельные классы для каждого состояния, в котором может пребывать объект, а затем вынести туда поведения, соответствующие этим состояниям
+
+В *Стратегии* объекты не знают друг о друге и никак не связаны. В *Состоянии* конкретные состояния могут переключать контекст
+
+> действие кнопки телефона в различных состояниях (locked, unlocked, turned off)
+
+## Strategy
+
+определяет семейство схожих алгоритмов и помещает каждый из них в собственный класс, после чего алгоритмы можно взаимозаменять прямо во время исполнения программы
+
+> прокладывание маршрута в навигаторе для разных видов траснпорта (машина, автобус, велосипед)
+
+## Chain of Responsibility
+
+позволяет передавать запросы последовательно по цепочке обработчиков
+
+для каждой проверки создается отдельный класс с единственным методом выполнения
+
+- прерывать дальнейшие проверки, если текущая проверка не прошла
+- прерывать дальнейшую передачу, если найден обработчик для события
+
+> автоответчик -> оператор -> специалист по определенной теме
+
+## Command
+
+превращает запросы в объекты, позволяя передавать их как аргументы при вызове методов, ставить запросы в очередь, логировать их, а также поддерживать отмену операций
+
+> операции в редакторе кода (e.g. сохранение), выполняемые через различные UI элементы (кнопка в меню, контекстное меню, горячие клавиши)
+
+```typescript
+class Command {
+  abstract execute() {}
+}
+
+class CopyCommand extends Command {
+  execute() {
+    doSomething()
+  }
+}
+```
+
+## Iterator
+
+даёт возможность последовательно обходить элементы составных объектов, не раскрывая их внутреннего представления
+
+идея в том, чтобы вынести поведение обхода коллекции из самой коллекции в отдельный класс
+
+> разные варианты обхода коллекции (в глубину, в ширину)

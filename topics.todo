@@ -33,7 +33,7 @@ Participate in Architectural decisions:
     ✔ DRY @done(21-03-14 23:55)
     ✔ YAGNI @done(21-03-14 23:57)
   ✔ Dependency Injection @done(21-03-20 19:23)
-  ☐ GOF Patterns (at least 10-12)
+  ✔ GOF Patterns (at least 10-12) @done(21-03-25 22:24)
 
 Study performance Analysis:
   ✔ Network Optimizations @done(21-03-20 19:53)
