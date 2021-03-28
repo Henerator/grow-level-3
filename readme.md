@@ -96,6 +96,8 @@
 
 [Design Patterns](#design-patterns)
 
+[OOP Principles](#oop-principles)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -1248,3 +1250,12 @@ class CopyCommand extends Command {
 идея в том, чтобы вынести поведение обхода коллекции из самой коллекции в отдельный класс
 
 > разные варианты обхода коллекции (в глубину, в ширину)
+
+
+# OOP Principles
+
+## The Principle of Least Knowledge
+
+1. Each unit should have only limited knowledge about other units
+1. Each unit should only talk to its friends; don’t talk to strangers
+1. Only talk to your immediate friends
