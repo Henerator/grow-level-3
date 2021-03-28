@@ -98,6 +98,8 @@
 
 [OOP Principles](#oop-principles)
 
+[Separation of Concerns](#separation-of-concerns)
+
 # Software Development Methodologies
 
 SDLC (Software Development Life Cycle)
@@ -1259,3 +1261,17 @@ class CopyCommand extends Command {
 1. Each unit should have only limited knowledge about other units
 1. Each unit should only talk to its friends; don’t talk to strangers
 1. Only talk to your immediate friends
+
+# Separation of Concerns
+
+In web programming, there is a design principle that says that your web site implementation should be separated into three domains:
+
+- **Style and presentation** — the visual appearance of the site
+- **Business Logic** — the way that the site behaves in response to user actions
+- **Content** — the actual data being presented
+
+Example of web server's layers:
+
+- **Input layer** — responsible for accepting input HTTP requests, validating them for proper authentication and format, and then dispatching them to the correct logic function
+- **Logic layer** — contains the algorithms which operate on the data in response to user input
+- **Data access layer** — responsible for reading and writing in-memory representations of records to and from the database, as well as performing complex queries over the data
