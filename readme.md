@@ -84,6 +84,8 @@
 
 [Memory Leaks](#memory-leaks)
 
+[Angular](#angular)
+
 [Angular optimizations](#angular-optimizations)
 
 [Angular Ivy](#angular-ivy)
@@ -936,6 +938,18 @@ Reflow срабатывает
   - perform some actions and bring the page roughly back to the same state. Take another heap snapshot
   - change the page’s state as much as possible. take a third heap snapshot
 - this will show all objects that were created between snapshot 1 and 2 that are still around in snapshot 3
+
+# Angular
+
+## forRoot forChild
+
+- **forRoot** - creates an NgModule that contains all the directives, the given routes, and the Router service itself
+- **forChild** - creates an NgModule that contains all the directives and the given routes, but does not include the Router service
+
+When you provide values in eager-loaded modules imported into each other, the modules’ providers are merged.
+But each lazy-loaded module gets its own injector.
+Lazy-loaded modules have their own injectors and this can lead to issues when trying to keep some provided service a singleton.
+You can solve this by importing modules using the ModuleWithProviders interface. forRoot / forChild is only a convenient pattern to wrap this a clean way.
 
 # Angular optimizations
 

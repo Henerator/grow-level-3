@@ -58,4 +58,10 @@ JS engines:
 
 Angualr vs React:
   ☐ Angular
+    ✔ forRoot, forChild @done(21-04-18 21:00)
   ☐ React
+
+Network communications:
+  ☐ HTTP 2.0
+  ☐ HTTP 3.0
+  ☐ OSI
