@@ -1,106 +1,171 @@
-**Table of contents**
+## Table of Contents
 
-[Software Development Methodologies](#software-development-methodologies)
-- [Agile](#agile)
-  - [Приниципы](#приниципы)
-  - [Scrum](#scrum)
-  - [Kanban](#kanban)
-  - [Extreme Programming](#extreme-programming)
-  - [Lean](#lean)
-- [Waterfall](#waterfall)
-- [RAD model](#rad-model)
-- [Incremental model](#incremental-model)
-  - [Advantages](#advantages)
-  - [Disadvantages](#disadvantages)
-- [Iterative model](#iterative-model)
-- [Spiral model](#spiral-model)
-- [V-model](#v-model)
-
-[CI/CD](#ci/cd)
-
-[JS Engines](#js-engines)
-- [V8](#v8)
-  - [Threads](#threads)
-  - [Hidden class](#hidden-class)
-  - [Inline Caching](#inline-caching)
-  - [Optimize your code](#optimize-your-code)
-
-[Estimation](#estimation)
-- [T-Shirt Size](#t-shirt-size)
-- [Planning Poker](#planning-poker)
-- [Bucket System](#bucket-system)
-- [Dot-voting](#dot-voting)
-- [Estimation by Analogy](#estimation-by-analogy)
-- [Bottom-up Estimating](#bottom-up-estimating)
-- [Up-bottom Estimating](#up-bottom-estimating)
-- [PERT (Program Evaluation Review Technique)](#pert-program-evaluation-review-technique)
-- [Bug Fixing Time Planning](#bug-fixing-time-planning)
-- [Experts Estimations](#experts-estimations)
-
-[Client server communication](#client-server-communication)
-- [Long Pooling](#long-pooling)
-- [Server Side Events](#server-side-events)
-- [Web Sockets](#web-sockets)
-
-[Code quiality](#code-quiality)
-- [7 axes](#7-axes)
-- [Metrics](#metrics)
-- [How to Improve Code Quality](#how-to-improve-code-quality)
-
-[Test pyramid](#test-pyramid)
-- [Integration tests](#integration-tests)
-
-[SonarQube](#sonar-qube)
-
-[OWASP 10](#owasp-10)
-
-[Design pattern](#design-pattern)
-- [MVC](#mvc)
-  - [Passive view](#passive-view)
-- [MVP](#mvp)
-  - [Passive View](#passive-view)
-  - [Supervising Controller](#supervising-controller)
-- [MVVM](#mvvm)
-
-[Flux](#flux)
-- [Redux](#redux)
-
-[SOLID](#solid)
-
-[Programming Principles](#programming-principles)
-- [KISS](#kiss)
-- [DRY](#dry)
-- [YAGNI](#yagni)
-
-[Dependency Injection](#dependency-injection)
-
-[Network Optimizations](#network-optimizations)
-
-[JS Performance Optimizations](#js-performance-optimizations)
-
-[Critical Rendering Path](#critical-rendering-path)
-
-[Repaint, Re-flow, Composition](#repaint-re-flow-composition)
-
-[Memory Leaks](#memory-leaks)
-
-[Angular](#angular)
-
-[Angular optimizations](#angular-optimizations)
-
-[Angular Ivy](#angular-ivy)
-
-[Angular Change Detection](#angular-change-detection)
-
-[React Optimizations](#react-optimizations)
-
-[React Change Detection](#react-change-detection)
-
-[Design Patterns](#design-patterns)
-
-[OOP Principles](#oop-principles)
-
-[Separation of Concerns](#separation-of-concerns)
+- [Software Development Methodologies](#software-development-methodologies)
+  - [Agile](#agile)
+    - [Приниципы](#приниципы)
+    - [Scrum](#scrum)
+      - [Activities](#activities)
+      - [Roles](#roles)
+    - [Kanban](#kanban)
+    - [Extreme Programming](#extreme-programming)
+      - [Practicies](#practicies)
+    - [Lean](#lean)
+      - [Principles](#principles)
+      - [Principles](#principles)
+      - [Practicies](#practicies)
+  - [Waterfall](#waterfall)
+  - [RAD model](#rad-model)
+  - [Incremental model](#incremental-model)
+    - [Advantages](#advantages)
+    - [Disadvantages](#disadvantages)
+  - [Iterative model](#iterative-model)
+  - [Spiral model](#spiral-model)
+  - [V-model](#v-model)
+- [CI/CD](#ci/cd)
+  - [Инструменты для автоматического развертывания:](#инструменты-для-автоматического-развертывания:)
+  - [Этапы CD-конвейера:](#этапы-cd-конвейера:)
+  - [Continuous Delivery vs Continuous Deployment](#continuous-delivery-vs-continuous-deployment)
+- [JS Engines](#js-engines)
+  - [V8](#v8)
+    - [Threads](#threads)
+    - [Hidden class](#hidden-class)
+    - [Inline Caching](#inline-caching)
+    - [Optimize your code](#optimize-your-code)
+- [Estimation](#estimation)
+  - [T-Shirt Size](#t-shirt-size)
+  - [Planning Poker](#planning-poker)
+  - [Bucket System](#bucket-system)
+  - [Dot-voting](#dot-voting)
+  - [Estimation by Analogy](#estimation-by-analogy)
+  - [Bottom-up Estimating](#bottom-up-estimating)
+  - [Up-bottom Estimating](#up-bottom-estimating)
+  - [PERT (Program Evaluation Review Technique)](#pert-(program-evaluation-review-technique))
+  - [Bug Fixing Time Planning](#bug-fixing-time-planning)
+  - [Experts Estimations](#experts-estimations)
+- [Client server communication](#client-server-communication)
+  - [Long Pooling](#long-pooling)
+  - [Server Side Events](#server-side-events)
+    - [Restrictions](#restrictions)
+  - [Web Sockets](#web-sockets)
+- [Code quiality](#code-quiality)
+  - [7 axes](#7-axes)
+  - [Metrics](#metrics)
+  - [How to Improve Code Quality](#how-to-improve-code-quality)
+- [Test pyramid](#test-pyramid)
+  - [Integration tests](#integration-tests)
+- [SonarQube](#sonarqube)
+- [OWASP 10](#owasp-10)
+- [Design pattern](#design-pattern)
+  - [MVC](#mvc)
+    - [Passive view](#passive-view)
+  - [MVP](#mvp)
+    - [Passive View](#passive-view)
+    - [Supervising Controller](#supervising-controller)
+  - [MVVM](#mvvm)
+- [Flux](#flux)
+  - [Redux](#redux)
+- [SOLID](#solid)
+  - [SRP](#srp)
+  - [Open-Closed Principle](#open-closed-principle)
+  - [Liskov Substitution Principle](#liskov-substitution-principle)
+  - [Interface Segregation Principle](#interface-segregation-principle)
+  - [Dependency Inversion Principle](#dependency-inversion-principle)
+- [Programming Principles](#programming-principles)
+  - [KISS](#kiss)
+  - [DRY](#dry)
+  - [YAGNI](#yagni)
+  - [Code Smell](#code-smell)
+- [Dependency Injection](#dependency-injection)
+  - [Способы работы с зависимостями](#способы-работы-с-зависимостями)
+    - [Создавать зависимости в зависимом классе](#создавать-зависимости-в-зависимом-классе)
+    - [Внедрять зависимости через класс компонента](#внедрять-зависимости-через-класс-компонента)
+    - [Зависимости обрабатываются третьей стороной](#зависимости-обрабатываются-третьей-стороной)
+- [Network Optimizations](#network-optimizations)
+  - [Metrics](#metrics)
+- [JS Performance Optimizations](#js-performance-optimizations)
+  - [Obfuscation](#obfuscation)
+  - [Minification](#minification)
+- [Critical Rendering Path](#critical-rendering-path)
+- [Repaint, Re-flow, Composition](#repaint,-re-flow,-composition)
+  - [Layout/Reflow](#layout/reflow)
+  - [Paint/Repaint](#paint/repaint)
+  - [Composite](#composite)
+- [Memory Leaks](#memory-leaks)
+  - [Garbage Collector](#garbage-collector)
+    - [Mark and sweep](#mark-and-sweep)
+  - [Sources](#sources)
+  - [Detection](#detection)
+- [Angular](#angular)
+  - [forRoot forChild](#forroot-forchild)
+- [Angular optimizations](#angular-optimizations)
+  - [OnPush change detection strategy](#onpush-change-detection-strategy)
+  - [RunOutsideAngular](#runoutsideangular)
+  - [Pure pipes](#pure-pipes)
+  - [Trackby](#trackby)
+  - [Unsubscribe from Observables](#unsubscribe-from-observables)
+  - [Optimize template expressions](#optimize-template-expressions)
+  - [AOT compilation](#aot-compilation)
+    - [Pros](#pros)
+  - [Lazy loading](#lazy-loading)
+  - [Preloading Modules](#preloading-modules)
+  - [Resolve Guards](#resolve-guards)
+- [Angular Ivy](#angular-ivy)
+  - [Locality](#locality)
+  - [Tree-Shaking](#tree-shaking)
+- [Angular Change Detection](#angular-change-detection)
+  - [Change Detection Reason](#change-detection-reason)
+- [React Optimizations](#react-optimizations)
+  - [Memo](#memo)
+  - [PureComponent](#purecomponent)
+  - [UseMemo](#usememo)
+  - [UseCallback](#usecallback)
+  - [Avoid inline function](#avoid-inline-function)
+  - [React Fragment](#react-fragment)
+  - [Avoid using Index as Key](#avoid-using-index-as-key)
+  - [Avoiding props in initial states](#avoiding-props-in-initial-states)
+  - [Avoid spreading props](#avoid-spreading-props)
+  - [Using reselect selectors](#using-reselect-selectors)
+  - [Lazy loading](#lazy-loading)
+  - [SSR](#ssr)
+- [React Change Detection](#react-change-detection)
+  - [Change Detection Reason](#change-detection-reason)
+- [Design Patterns](#design-patterns)
+  - [Singleton](#singleton)
+    - [Pros](#pros)
+    - [Cons](#cons)
+  - [Builder](#builder)
+    - [Pros](#pros)
+    - [Cons](#cons)
+  - [Abstract Factory](#abstract-factory)
+  - [Proxy](#proxy)
+  - [Flyweight](#flyweight)
+  - [State](#state)
+  - [Strategy](#strategy)
+  - [Chain of Responsibility](#chain-of-responsibility)
+  - [Command](#command)
+  - [Iterator](#iterator)
+- [OOP Principles](#oop-principles)
+  - [The Principle of Least Knowledge](#the-principle-of-least-knowledge)
+- [Separation of Concerns](#separation-of-concerns)
+- [RxJS](#rxjs)
+  - [Hot and Cold](#hot-and-cold)
+  - [Shared and not](#shared-and-not)
+  - [Subject](#subject)
+  - [Operators](#operators)
+    - [map](#map)
+    - [reduce](#reduce)
+    - [scan](#scan)
+    - [share](#share)
+      - [notes](#notes)
+    - [map](#map)
+    - [concat](#concat)
+    - [concatMap](#concatmap)
+    - [merge](#merge)
+    - [mergeMap](#mergemap)
+    - [switch](#switch)
+    - [switchMap](#switchmap)
+    - [exhaustMap](#exhaustmap)
+- [Imperative and Declarative Programming](#imperative-and-declarative-programming)
 
 # Software Development Methodologies
 
@@ -216,7 +281,6 @@ SDLC (Software Development Life Cycle)
 - **Объединять сотрудников** - когда команда работает сообща и понимает свою ценность, процесс идет быстрее и эффективнее. Поэтому важно доверять сотрудникам и ценить то, что они делают.
 - **Создавать целостный продукт** - команда должна сфокусироваться на качестве, не допускать дефектов и всегда ставить в приоритет потребности заказчика.
 - **Следить за общим процессом** - чтобы работа шла хорошо, каждый в команде должен понимать задачи и иметь возможность постоянно видеть весь процесс. Вся информация по проекту должна быть доступна в любое время. Для этих целей в гибких методологиях (Scrum, Kanban) используют доску, где отмечены цели, задачи и процесс их выполнения.
-
 
 #### Principles
 
@@ -417,7 +481,7 @@ XS, S, M, L, XL
 
 ## Bottom-up Estimating
 
-Работа разбивается на более мелкие. Оценивается каждая из частей. Оценки  суммируются. Точность оценки "снизу вверх" определяется размером и сложностью работ, выделенных на более нижних уровнях
+Работа разбивается на более мелкие. Оценивается каждая из частей. Оценки суммируются. Точность оценки "снизу вверх" определяется размером и сложностью работ, выделенных на более нижних уровнях
 
 ## Up-bottom Estimating
 
@@ -528,7 +592,6 @@ cамый простой способ получать новую информа
 - Архитектура и проектирование
 - Сложность
 
-
 # OWASP 10
 
 - **Injection** - occur when untrusted data is sent to an interpreter as part of a command or query
@@ -610,7 +673,7 @@ In russian
 
 подход к управлению состоянием. Накладывает определенные ограничения на то, как и когда могут произойти изменения.
 
-*все данные должны передаваться только в одном направлении*
+_все данные должны передаваться только в одном направлении_
 
 ![MVVM](https://miro.medium.com/max/700/1*WNMEPdtK9TlayHJ1wcUZPQ.png)
 
@@ -670,7 +733,7 @@ Http завивист от конкретной реализации XMLHttpServ
 class XMLHttpService {}
 
 class Http {
-  constructor(xmlHttpService: XMLHttpService)
+  constructor(xmlHttpService: XMLHttpService);
 }
 ```
 
@@ -684,7 +747,7 @@ interface Connection {
 class XMLHttpService implements Connection {}
 
 class Http {
-  constructor(connection: Connection)
+  constructor(connection: Connection);
 }
 ```
 
@@ -741,15 +804,15 @@ DI - идея работать с зависимостями вне зависи
 
 ```typescript
 class ClassA {
-  classB: ClassB
+  classB: ClassB;
   constructor() {
-    this.classB = ClassB()
+    this.classB = ClassB();
   }
 }
 ```
 
 - ClassA и ClassB тесно связаны друг с другом
-- При любом изменении в инициализации класса ClassB потребуется корректировать код  внутри класса ClassA
+- При любом изменении в инициализации класса ClassB потребуется корректировать код внутри класса ClassA
 - ClassA невозможно протестировать
 
 ### Внедрять зависимости через класс компонента
@@ -773,15 +836,15 @@ class ComponentClass(){
 ```typescript
 class DependencyManager {
   provideClassC() {
-    return ClassC()
+    return ClassC();
   }
 
   provideClassB(classC: ClassC) {
-    return ClassB(classC)
+    return ClassB(classC);
   }
 
   provideClassA(classB: ClassB) {
-    return ClassA(classB)
+    return ClassA(classB);
   }
 }
 ```
@@ -837,13 +900,16 @@ class DependencyManager {
 - Используйте асинхронный код, чтобы предотвратить блокировку потоков
 - Используйте Code Splitting - вначале отсылаете пользователю только самые необходимые модули
 - Используйте async и defer - по умолчанию браузер ожидает загрузки скрипта перед обработкой страницы
+
   - **async** - страница не ждет async-скрипты, контент обрабатывается и отображается
+
     - fetched asynchronously
     - when it’s ready the HTML parsing is paused to execute the script, then it’s resumed.
 
   - **defer** - загружать скрипт после окончания рендеринга
     - fetched asynchronously
     - executed only after the HTML parsing is done
+
 - Используйте Web Worker-ы для запуска ресурсоемких задач в фоне
 
 ## Obfuscation
@@ -869,7 +935,8 @@ The set of steps browsers must take to convert HTML, CSS and JavaScript into liv
 1. Перестроить DOM tree (при необходимости)
 1. Построить Render tree
 1. Отрисовать страницу (layout → paint → Composite)
-  - **layout** - determines where and how the elements are positioned on the page
+
+- **layout** - determines where and how the elements are positioned on the page
 
 # Repaint, Re-flow, Composition
 
@@ -878,8 +945,8 @@ The set of steps browsers must take to convert HTML, CSS and JavaScript into liv
 1. Ноды собираются в DOM (Domain Object Model) дерево
 1. Параллельно с этим процессом происходит парсинг CSS правил и строится CSSOM (CSS Object Model)
 1. CSSOM и DOM объединяются в Render Tree, в котором
-    - скрываются невидимые элементы (meta, script, link и display: none)
-    - добавляются элементы которых нет в DOM (псевдоэлементы :before, :after)
+   - скрываются невидимые элементы (meta, script, link и display: none)
+   - добавляются элементы которых нет в DOM (псевдоэлементы :before, :after)
 1. Происходит Reflow, Repaint и Composition
 
 ## Layout/Reflow
@@ -887,12 +954,13 @@ The set of steps browsers must take to convert HTML, CSS and JavaScript into liv
 определяются координаты каждого элемента и пространство которое он занимает
 
 > Определение размеров и местоположений элементов происходит не за один проход по дереву,
-проход может происходить несколько раз, если элементы встречающиеся позже, влияют на предыдущие элементы
+> проход может происходить несколько раз, если элементы встречающиеся позже, влияют на предыдущие элементы
 
 при каждом изменении свойства стиля, отвечающего за положение и размеры элемента,
 происходит повторный процесс расчета размеров и положений
 
 Reflow срабатывает
+
 - при запросе метрики элемента через JS (e.g. getBoundingClientRect())
 - при скроллинге
 - прие запуске на выполнение событий
@@ -989,13 +1057,13 @@ you can use Pipes instead
 
 ## AOT compilation
 
- - JIT compiles at runtime (выполняется каждый раз при запуске приложения в браузере)
- - AOT (ahead-of-time) compiles at build (выполняется один раз при сборке приложения)
+- JIT compiles at runtime (выполняется каждый раз при запуске приложения в браузере)
+- AOT (ahead-of-time) compiles at build (выполняется один раз при сборке приложения)
 
- AOT produces only the compiled templates, and removes the Angular compiler from the deployment bundle
- (reduces app payload by around 1MB) and rendering time is increased significantly
+AOT produces only the compiled templates, and removes the Angular compiler from the deployment bundle
+(reduces app payload by around 1MB) and rendering time is increased significantly
 
- ### Pros
+### Pros
 
 - компиляция шаблонов до сборки (выявление ошибок при сборке)
 - более быстрый запуск приложения
@@ -1150,24 +1218,24 @@ ensure that a class has only one instance, while providing a global access point
 ```typescript
 class Director {
   construct(builder: Builder) {
-    builder.reset()
-    builder.setSeats(2)
-    builder.setEngine(new SportEngine())
-    builder.setTripComputer(true)
-    builder.setGPS(true)
+    builder.reset();
+    builder.setSeats(2);
+    builder.setEngine(new SportEngine());
+    builder.setTripComputer(true);
+    builder.setGPS(true);
   }
 }
 
 class Application {
   makeCar() {
-    const director = new Director()
+    const director = new Director();
 
-    const carBuilder = new CarBuilder()
-    director.constructSportsCar(carBuilder)
-    const car = builder.getResult()
+    const carBuilder = new CarBuilder();
+    director.constructSportsCar(carBuilder);
+    const car = builder.getResult();
 
-    const manualBuilder = new CarManualBuilder()
-    director.constructSportsCar(manualBuilder)
+    const manualBuilder = new CarManualBuilder();
+    director.constructSportsCar(manualBuilder);
   }
 }
 ```
@@ -1205,11 +1273,10 @@ class Application {
 class TreeFactory {
   static treeTypes: TreeType[];
   static getTreeType(name, color, texture) {
-    const type = treeTypes.find(name, color, texture)
-    if (type == null)
-      type = new TreeType(name, color, texture)
-      treeTypes.add(type)
-    return type
+    const type = treeTypes.find(name, color, texture);
+    if (type == null) type = new TreeType(name, color, texture);
+    treeTypes.add(type);
+    return type;
   }
 }
 ```
@@ -1220,7 +1287,7 @@ class TreeFactory {
 
 предлагает создать отдельные классы для каждого состояния, в котором может пребывать объект, а затем вынести туда поведения, соответствующие этим состояниям
 
-В *Стратегии* объекты не знают друг о друге и никак не связаны. В *Состоянии* конкретные состояния могут переключать контекст
+В _Стратегии_ объекты не знают друг о друге и никак не связаны. В _Состоянии_ конкретные состояния могут переключать контекст
 
 > действие кнопки телефона в различных состояниях (locked, unlocked, turned off)
 
@@ -1254,7 +1321,7 @@ class Command {
 
 class CopyCommand extends Command {
   execute() {
-    doSomething()
+    doSomething();
   }
 }
 ```
@@ -1266,7 +1333,6 @@ class CopyCommand extends Command {
 идея в том, чтобы вынести поведение обхода коллекции из самой коллекции в отдельный класс
 
 > разные варианты обхода коллекции (в глубину, в ширину)
-
 
 # OOP Principles
 
@@ -1289,3 +1355,331 @@ Example of web server's layers:
 - **Input layer** — responsible for accepting input HTTP requests, validating them for proper authentication and format, and then dispatching them to the correct logic function
 - **Logic layer** — contains the algorithms which operate on the data in response to user input
 - **Data access layer** — responsible for reading and writing in-memory representations of records to and from the database, as well as performing complex queries over the data
+
+# RxJS
+
+- [RxJSp Playground](https://stackblitz.com/edit/rxjs-playground-test-ftvweo?file=index.ts)
+
+- [Angular RxJS](https://blog.angular-university.io/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/)
+
+- [Rx Visualizer](https://rxviz.com)
+
+> **Reactive programming** is a declarative programming paradigm that is based on the idea of asynchronous event processing and data streams
+
+> **Functional Reactive Programming** (FRP) is a paradigm for software development that says that entire programs can be built uniquely around the notion of streams
+
+> **RxJs** stands for Reactive Extensions for Javascript, and it's an implementation of Observables for Javascript
+
+> A stream is a sequence of values in time
+
+**Observable** is for the consumer, it can be transformed and subscribed
+
+**Observer** is the interface which is used to feed an observable source
+
+```js
+var observable = Observable.create(observer => {
+    observer.next('first');
+    observer.next('second');
+});
+observable.map(x => ...).filter(x => ...).subscribe(x => ...)
+```
+
+**Subject** implements both the **Observable** and the **Observer** interfaces
+
+## Hot and Cold
+
+> The observable is said to be **cold** because it does not generate new values if no subscriptions exist.
+
+> Each subscriber gets all stream values
+
+```js
+const obs = interval(1000).pipe(
+  take(2),
+  tap((i) => console.log('obs value ' + i))
+);
+
+obs.subscribe((value) => console.log('observer 1 received ' + value));
+obs.subscribe((value) => console.log('observer 2 received ' + value));
+
+// >>> obs value 0
+// observer1 recieved 0
+// >>> obs value 0
+// observer2 recieved 0
+
+// >>> obs value 1
+// observer1 recieved 1
+// >>> obs value 1
+// observer2 recieved 1
+```
+
+## Shared and not
+
+> Observables are not **shared** by default. When we subscribe two observers two separate processing chains are set up
+
+## Subject
+
+> Subject is shared by default
+
+```js
+const subject = new Subject();
+const obs = subject.asObservable();
+
+const helper1 = new HelpObserver('observer1');
+helper1.subscribe(obs, 200);
+
+const helper2 = new HelpObserver('observer2');
+helper2.subscribe(obs);
+
+setTimeout(() => subject.next(3), 100);
+
+// observer2 recieved 3
+// no recieved message from observer1
+// since it subscribed AFTER data was emitted
+```
+
+## Operators
+
+### map
+
+> The output of map is still another observable
+
+```js
+const obs = interval(500).pipe(
+  take(5),
+  map((i) => 2 * i)
+);
+```
+
+### reduce
+
+> Reduce emits a value when the stream obs **closes**
+
+```js
+const obs = interval(500).pipe(take(5));
+
+var reduced = obs.pipe(reduce((state, value) => state + value, 0));
+
+reduced.subscribe((total) => console.log('total =' + total));
+```
+
+### scan
+
+> Emit the state of the observable after each element is reduced
+
+```js
+const obs = interval(500).pipe(take(5));
+
+var scanObs = obs.pipe(scan((state, value) => state + value, 0));
+
+scanObs.subscribe((total) => console.log(total));
+```
+
+### share
+
+> When we subscribe to an observable, it triggers the instantiation of a separate processing chain
+
+> Share operator allows to share a single subscription of a processing chain with other subscribers
+
+```js
+const obs = interval(500).pipe(
+  take(2),
+  tap((i) => console.log('obs value ' + i)),
+  share()
+);
+
+obs.subscribe((value) => console.log('observer 1 received ' + value));
+obs.subscribe((value) => console.log('observer 2 received ' + value));
+
+// obs value 0
+// observer 1 received 0
+// observer 2 received 0
+
+// obs value 1
+// observer 1 received 1
+// observer 2 received 1
+
+/** without share  */
+
+// obs value 0
+// observer 1 received 0
+// obs value 0
+// observer 2 received 0
+
+// obs value 1
+// observer 1 received 1
+// obs value 1
+// observer 2 received 1
+```
+
+#### notes
+
+If second subscriber subscribes before stream was completed it gets only new values.
+
+```js
+const obs = interval(500).pipe(
+  take(2),
+  tap((i) => console.log('obs value ' + i)),
+  share()
+);
+
+const helper1 = new HelpObserver('name1');
+helper1.subscribe(obs, 600);
+
+const helper2 = new HelpObserver('name2');
+helper2.subscribe(obs);
+
+// obs value 0
+// name2 received 0
+// obs value 1
+// name2 received 1
+// name1 received 1
+```
+
+If second subscriber subscribes after stream was completed for first subscriber it starts chain again and gets all values
+
+```js
+const obs = interval(500).pipe(
+  take(2),
+  tap((i) => console.log('obs value ' + i)),
+  share()
+);
+
+const helper1 = new HelpObserver('name1');
+helper1.subscribe(obs, 1500);
+
+const helper2 = new HelpObserver('name2');
+helper2.subscribe(obs);
+
+// obs value 0
+// name2 received 0
+// obs value 1
+// name2 received 1
+
+// obs value 0
+// name1 received 0
+// obs value 1
+// name1 received 1
+```
+
+### map
+
+> map **value** to another **value**
+
+### concat
+
+```js
+const series1$ = of('a', 'b');
+const series2$ = of('x', 'y');
+
+concat(series1$, series2$).subscribe(console.log);
+
+// a
+// b
+// x
+// y
+```
+
+> this only works because these Observables are **completing** !
+
+> concat() will subscribe to the first Observable series1$, but not to the second Observable series2$ (this is critical to understand concatenation)
+
+> source1$ will then complete, and only after that will concat() now subscribe to source2$
+
+### concatMap
+
+```ts
+this.form.valueChanges
+  .pipe(
+    concatMap(formValue => this.http.put(`/api/course/${courseId}`, formValue))
+  )
+  .subscribe(
+    saveResult =>  ... handle successful save ...,
+    err => ... handle save error ...
+  );
+```
+
+> all form values are going to be sent to the backend sequentially. Second request will be send after first request completed only
+
+### merge
+
+> not wait for an Observable to complete before subscribing to the next Observable
+
+> subscribes to every merged Observable at the same time, and then it outputs the values of each source Observable to the combined result
+
+```ts
+const series1$ = interval(1000).pipe(map((val) => val * 10));
+const series2$ = interval(1000).pipe(map((val) => val * 100));
+
+const result$ = merge(series1$, series2$);
+
+result$.subscribe(console.log);
+
+// 0
+// 0
+// 10
+// 100
+```
+
+### mergeMap
+
+> don't have to wait for the previous inner Observable to complete before triggering the next innner Observable
+
+```ts
+this.form.valueChanges
+  .pipe(
+    mergeMap(formValue => this.http.put(`/api/course/${courseId}`, formValue))
+  )
+  .subscribe(
+    saveResult =>  ... handle successful save ...,
+    err => ... handle save error ...
+  );
+```
+
+> requests are happening in parallel
+
+### switch
+
+> if a new Observable starts emitting values we are then going to unsubscribe
+> from the previous Observable, before subscribing to the new Observable
+
+### switchMap
+
+```ts
+const searchText$: Observable<string> = fromEvent<any>(this.input.nativeElement, 'keyup')
+  .pipe(
+    map(event => event.target.value),
+    startWith(''),
+    debounceTime(400),
+    distinctUntilChanged()
+  ); 
+
+const lessons$: Observable<Lesson[]> = searchText$
+  .pipe(
+    switchMap(search => this.loadLessons(search))        
+  )
+  .subscribe();
+```
+
+> will cancel `loadLessions` request before send new one on user search
+
+```ts
+fromEvent(this.saveButton.nativeElement, 'click')
+  .pipe(
+      exhaustMap(() => this.saveCourse(this.form.value))
+  )
+  .subscribe();
+```
+
+> will send request after first click and will ignore all clicks until request is finished
+
+### exhaustMap
+
+> ignores all values before stream is completed
+
+# Imperative and Declarative Programming
+
+> Императивное — это описание того, **как** ты делаешь что-то, а декларативное — того, **что** ты делаешь
+
+Imperative languages: C, C++, Java, ...
+
+Declarative languages: SQL, HTML, ...

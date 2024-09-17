@@ -65,3 +65,8 @@ Network communications:
   ☐ HTTP 2.0
   ☐ HTTP 3.0
   ☐ OSI
+
+RxJS:
+  ✔ Hot & Cold @done(24-09-17 09:26)
+  ✔ Shared @done(24-09-17 09:26)
+  ✔ Operators @done(24-09-17 10:00)
